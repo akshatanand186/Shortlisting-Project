@@ -1,0 +1,29 @@
+For writing the code part, C++ has been used throughout.
+
+Storing The Student details
+Student details:-
+
+A struct named student is created which has various fields such as name, category, class10percentage.. etc 
+We store all the details entered in the csv file into a vector of vectors which initially stores 
+everything as string. Now the string is converted into a double using stod function
+in C++ for fields such as percentage, CG, marks etc.
+
+The code comprises of 3 part:-
+
+1. Read_CSV function - reads input file and stores the details.
+
+This function takes the given csv file after modifications as explained in file I/O methods
+as input and processes it to store each student's details. The data structure we used 
+for this is Vector of vectors. We then pass the details for each candidate into
+the struct student. Then this struct is passed into the isStudentEligible function.
+
+2. isStudentEligible function - Uses decision tree and if else statements to shortlist.
+
+This is the logic part of the code which has been explained in the decision tree.
+Two values will be returned, one will be a bool value, which indicates whether student is selected or not
+Other will be a string, which mentions the reason of qualification/disqualification.
+
+3. write_csv function - Printing The Output
+
+This is a simple function which creates another output csv file to display the result returned
+by the isStudentEligible function.
