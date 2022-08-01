@@ -1,0 +1,28 @@
+-Reading Input from Excel file into C++ Program
+
+First we look on how data is stored in a spreadsheet. The CSV(comma separated values) file is a comma separated file that
+uses comma to separate values. Each record(row) consists of one or more fields(column), separated by commas.
+
+To read input from CSV file into C++ program, we have used the getline function in C++ which reads out the entire line and
+stores it as a string. To read a field, we use the getline function again but now the delimitter is a comma. This ensures a field 
+is read until we encounter a comma and stores it in the string.
+
+The end of the file is marked with a '$' symbol which has been entered manually in the excel sheet.
+
+Shortcomings of the above:- 
+
+1. Dealing with NON BREAKING SPACE
+The input file provided may have non breaking space in it which creates problem while reading the file.
+To remove this the best method is to use excel formula for all cells = TRIM(SUBSTITUE(X,CHAR(160),""); which
+replaces the non breaking space with null character and makes the file readable.
+
+2. Disadvantage of using "," in getline as delimitter
+
+If the input CSV file already has "," in it, we are not able to distinguish between the commas, so to 
+deal with this we replace all the commas in the excel sheet with space or null character. 
+This method is advantageous over other methods only when we know the commas in the input does not have any significance.
+In case when commas will have it's role we will have to use other methods.
+
+
+
+
